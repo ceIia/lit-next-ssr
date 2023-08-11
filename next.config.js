@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const withLitSSR = require("@lit-labs/nextjs")();
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Add your own config here
+  reactStrictMode: true,
+  swcMinify: true,
+};
+
+module.exports = withLitSSR(nextConfig);
