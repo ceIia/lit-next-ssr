@@ -1,6 +1,5 @@
 import { LitElement, html, css } from "lit";
 import { customElement } from "lit/decorators.js";
-import type React from "react";
 
 @customElement("my-card")
 export class MyCard extends LitElement {
@@ -16,19 +15,5 @@ export class MyCard extends LitElement {
 
   render() {
     return html`<slot></slot>`;
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "my-card": MyCard;
-  }
-
-  namespace JSX {
-    interface IntrinsicElements {
-      "my-card":
-        | React.DetailedHTMLProps<React.HTMLAttributes<MyCard>, MyCard>
-        | Partial<MyCard>;
-    }
   }
 }
